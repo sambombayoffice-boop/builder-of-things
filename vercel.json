@@ -1,0 +1,30 @@
+{
+  "$schema": "https://openapi.platform.vercel.com/v1/projects/configuration",
+  "framework": "static",
+  "buildCommand": "echo 'No build step required'",
+  "devCommand": "npx http-server -p 3000",
+  "installCommand": "npm install",
+  "outputDirectory": ".",
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "headers": [
+    {
+      "source": "/:path*",
+      "headers": [
+        { "key": "Content-Type", "value": "text/html; charset=utf-8" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "geolocation=(), microphone=()" }
+      ]
+    },
+    {
+      "source": "/:path*.:ext",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    }
+  ],
+  "cleanUrls": false,
+  "trailingSlash": false
+}

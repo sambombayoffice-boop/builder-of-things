@@ -1,0 +1,14 @@
+# Logs
+*.log
+
+# Backups / editor cruft
+*.bak
+*~
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Build / deploy
+.vercel/
+dist/
